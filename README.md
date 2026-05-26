@@ -16,6 +16,8 @@ Files used to define rules and project context for GitHub Copilot.
 * [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers)
 * [Elasticsearch](https://www.elastic.co/)
 * [LM Studio](https://lmstudio.ai/)
+* [UV](https://docs.astral.sh/uv/)
+* [Ruff](https://docs.astral.sh/ruff/)
 
 ## Prerequisits
 * VS Code with "Dev Containers" Marketplace Extension
