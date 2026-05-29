@@ -1,0 +1,25 @@
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "name_analyzer": {
+                    "type": "english",
+                    "stopwords": "_english_"
+                }
+            }
+        }
+    },
+    "mappings": {
+        "properties": {
+            "entity_id": {"type": "keyword"},
+            "business_name": {"type": "text", "analyzer": "name_analyzer"},
+            "status": {"type": "text"},
+            "address_line1": {"type": "text"},
+            "address_line2": {"type": "text"},
+            "city": {"type": "text"},
+            "state": {"type": "text"},
+            "zip_code": {"type": "text"},
+            "business_established_date": {"type": "date"}
+        }
+    }
+}

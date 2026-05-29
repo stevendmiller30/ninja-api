@@ -1,0 +1,12 @@
+# Ignore everything
+#*
+
+# Whitelist application files
+!.devcontainer/db_migrate.sh
+!config
+!src/
+!pyproject.toml
+!pytest.ini
+!ruff.toml
+!manage.py
+!uv.lock

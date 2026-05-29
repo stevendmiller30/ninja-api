@@ -1,0 +1,54 @@
+{
+  "name": "ninja-api django",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "django",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "remoteUser": "appuser",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/home/appuser/venv/bin/python",
+        "python.terminal.activateEnvInSelectedTerminal": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "batisteo.vscode-django",
+        "charliermarsh.ruff",
+        "Continue.continue",
+        "humao.rest-client",
+        "ms-azuretools.vscode-containers",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-vscode.vscode-chat-customizations-evaluations",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  "postCreateCommand": "uv sync && db_migrate",
+  "forwardPorts": [
+    8000,
+    5432,
+    5601,
+    9200
+   ],
+  "portsAttributes": {
+    "8000": {
+      "label": "Django App",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL Database",
+      "onAutoForward": "ignore"
+    },
+    "5601": {
+      "label": "Kibana",
+      "onAutoForward": "notify"
+    },
+    "9200": {
+      "label": "Elasticsearch",
+      "onAutoForward": "notify"
+  }
+}

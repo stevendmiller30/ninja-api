@@ -1,0 +1,12 @@
+
+#local development server
+@baseUrl = http://localhost:8000
+
+# add other environments here
+# @baseUrl = http://staging-server:8080
+# @baseUrl = http://production-server:8080
+
+### health check
+GET {{baseUrl}}/api/health
+Content-Type: application/json
+ 
