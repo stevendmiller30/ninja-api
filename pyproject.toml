@@ -1,10 +1,10 @@
 [project]
-name = "ninja-api"
+name = "base-project"
 version = "1.0.0"
 description = ""
 requires-python = ">=3.14"
 readme = "README.md"
-dependencies = [
+ dependencies = [
     "django~=6.0.0",
     "django-ninja>=1.6.0<2",
     "django-extensions>=4.1.0<5",
@@ -12,9 +12,8 @@ dependencies = [
     "requests>=2.34.2",
     "whitenoise[brotli]>=6.12.0,<7",
     "orjson>=3.11.9",
-    "pyhumps>=3.8.0",
-    "elasticsearch>=9.4.0"]
-
+    "pyhumps>=3.8.0"]
+    
 [dependency-groups]
 dev = [
     "ruff>=0.15.0,<0.16",
@@ -24,7 +23,6 @@ dev = [
     "pytest-cov>=7.1.0",
     "typer>=0.12.5",
 ]
-
 lint = [
     "ruff",
     "mypy"

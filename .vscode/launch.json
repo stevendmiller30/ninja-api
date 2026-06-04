@@ -42,9 +42,7 @@
       "default": "migrate",
       "options": [
         "migrate",
-        "makemigrations",
-        "co_business",
-        "us_senator_load"
+        "makemigrations"
       ]
     }
   ]

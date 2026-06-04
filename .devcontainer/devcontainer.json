@@ -1,5 +1,5 @@
 {
-  "name": "ninja-api django",
+  "name": "base django",
   "dockerComposeFile": [
     "../docker-compose.yml"
   ],
@@ -30,9 +30,7 @@
   "postCreateCommand": "uv sync && db_migrate",
   "forwardPorts": [
     8000,
-    5432,
-    5601,
-    9200
+    5432
    ],
   "portsAttributes": {
     "8000": {
@@ -42,13 +40,5 @@
     "5432": {
       "label": "PostgreSQL Database",
       "onAutoForward": "ignore"
-    },
-    "5601": {
-      "label": "Kibana",
-      "onAutoForward": "notify"
-    },
-    "9200": {
-      "label": "Elasticsearch",
-      "onAutoForward": "notify"
-  }
+    }
 }

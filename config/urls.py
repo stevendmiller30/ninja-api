@@ -17,11 +17,9 @@ Including another URLconf
 
 from django.urls import path
 from ninja import NinjaAPI
-from src.business.api import router as business_router
 from src.common.error_handlers import register_error_handlers
 from src.common.utility.camel_case_renderer import CamelCaseRenderer
 from src.health.api import router as health_router
-from src.search.api import router as search_router
 
 api = NinjaAPI(
     version="1.0.0",
@@ -32,9 +30,7 @@ api = NinjaAPI(
 # Register custom error handlers
 register_error_handlers(api)
 
-api.add_router("businesses", business_router, tags=["Business"])
 api.add_router("health", health_router, tags=["Health Check"])
-api.add_router("search", search_router, tags=["Search"])
 
 
 urlpatterns = [

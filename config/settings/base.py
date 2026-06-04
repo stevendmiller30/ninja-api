@@ -41,9 +41,7 @@ THIRD_PARTY_APPS = ["django_extensions"]
 
 LOCAL_APPS = [
     "src.common.apps.CommonConfig",
-    "src.business.apps.BusinessConfig",
     "src.health.apps.HealthCheckConfig",
-    "src.search.apps.SearchConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
