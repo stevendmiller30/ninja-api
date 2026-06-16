@@ -11,7 +11,7 @@ GET {{baseUrl}}/api/businesses
 Content-Type: application/json
 
 ### get a business by id
-GET {{baseUrl}}/api/businesses/12
+GET {{baseUrl}}/api/businesses/1
 Content-Type: application/json
 
 ### create a new businesses
