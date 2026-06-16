@@ -1,5 +1,4 @@
-# base project
-Starting point for a Containerized Django Ninja project.  Inital db is base-db which should be renamed.
+# Django-api
 
 ## AI instruction files
 Files used to define rules and project context for GitHub Copilot.
@@ -9,10 +8,13 @@ Files used to define rules and project context for GitHub Copilot.
 * .github/instructions/python.instructions.md
 
 ## Technology
+* [Django](https://www.djangoproject.com/)
+* [Django Ninja](https://django-ninja.rest-framework.com/)
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 * [Git Hub](https://github.com/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers)
+* [Elasticsearch](https://www.elastic.co/)
 * [LM Studio](https://lmstudio.ai/)
 * [UV](https://docs.astral.sh/uv/)
 * [Ruff](https://docs.astral.sh/ruff/)
@@ -32,6 +34,24 @@ $ git config --global user.name "name"
 ```
 
 ## Project Structure
+* .devcontainer --> VS Code dev container configuration
+* .vscode --> VS Code configuration
+* rest_client --> collection of API calls (get, post, put, patch, delete)
+* config --> Django Ninja configuration
+* src --> Project code
+  * <appname>/management --> custom management commands
+  * <appname>/migrations --> db migrations
+  * <appname>/models --> db models
+  * <appname>/schemas --> Pydantic and Ninja schemas
+  * <appname>/services --> Business service logic
+  * <appname>/tests --> unit tests
+  * <appname>/api.py --> api interface
+  * <appname>/apps.py --> application configuration
+  * common --> code shared among apps
+* Dockerfile, docker-compose.env, and docker-compose.yml --> defines docker environment
+* manage.py --> Django command line utility
+* pyproject.toml, ruff.toml, uv.lock --> project dependencies and auto formatting
+* pytest.int --> testing configuration
 
 ## Running Project
 
@@ -52,12 +72,22 @@ $ git config --global user.name "name"
     * "Django-Manage.py" will run manage.py with a drop down to select process to run
   * Click on the Play button
 
-### Unit Testsases
+### Unit Tests
+* VS Code
+  * Click on Beaker (Testing) icon
+    * select project, folder, or file and run, debug, or run with coverage
+  * run or debug tests within test file
+* Unix Terminal
+  * run ut, utf, and/or utr aliases
 
 ### DB Access (I use DBeaver)
 * Host: localhost
 * Port: 5435
-* Database: base-db
+* Database: ninja-api
 * Username: postgres
 * Password: <obtain for docker-compose.env>
 * Driver name: PostgresSQL
+
+### Elasticsearch Kibana
+* used to Visualize, explore, and manage data
+* http://localhost:5601
